@@ -46,13 +46,20 @@ abstract class AbstractApi {
         throw new Error(`Invalid env "${env}" value`);
     }
 
+    let headers: {locale: string; token?: string} = {
+      locale: 'en'
+    };
+
+    if (typeof token !== 'undefined') {
+      headers = {
+        ...headers,
+        token,
+      }
+    }
+
     this.http = Axios.create({
       baseURL: `${baseUrl}/`,
-      headers: {
-        ...token && { Authorization: `Bearer ${token}` },
-        locale: 'en'
-        // 'Content-Type': 'application/json'
-      },
+      headers,
       // transformRequest,
       // transformResponse
     });
