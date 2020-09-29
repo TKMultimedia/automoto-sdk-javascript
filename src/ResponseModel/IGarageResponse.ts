@@ -2,7 +2,6 @@ export default interface IGarageResponse {
   id: number;
   garage_name: string;
   address: string;
-  phone: number;
   city: string;
   country: string;
   lat: number;
@@ -12,7 +11,6 @@ export default interface IGarageResponse {
   vat_number: number;
   is_brand_representation: number;
   is_brand_subsidiary: number;
-  is_favorite: boolean;
   status: number;
   holiday_start: number;
   holiday_end: number;

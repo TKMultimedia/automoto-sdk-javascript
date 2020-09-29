@@ -54,7 +54,7 @@ abstract class AbstractApi {
       headers = {
         ...headers,
         token,
-      }
+      };
     }
 
     this.http = Axios.create({
