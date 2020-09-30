@@ -3,6 +3,7 @@ import { AxiosPromise } from 'axios';
 import IEmployee from '../Model/IEmployee';
 import { IGeneralResponse } from '../ResponseModel/IErrorResponse';
 import IGetEmloyeeRequestParams from '../RequestModel/IGetEmployeeRequestParams';
+import IGetEmloyeeListResponse from '../ResponseModel/IGetEmployeeListResponse';
 
 /**
  * @since v1.0.0
@@ -25,7 +26,7 @@ class EmployeeApi extends AbstractApi {
   public getEmployees(
     page: number,
     limit: number,
-    textSearch?: string): AxiosPromise<{ count: number; rows: IEmployee[] }> {
+    textSearch?: string): AxiosPromise<IGetEmloyeeListResponse> {
     let params: IGetEmloyeeRequestParams = {
       limit,
       page
