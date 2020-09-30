@@ -1,6 +1,8 @@
 import AbstractApi from './AbstractApi';
 import { AxiosPromise } from 'axios';
 import IUserProfileResponse from '../ResponseModel/IUserProfileResponse';
+import { IUserProfileUpdateRequest } from '../RequestModel/IUserProfileUpdateRequest';
+import { IGeneralResponse } from '../ResponseModel/IErrorResponse';
 
 /**
  * @since v1.0.0
@@ -14,6 +16,10 @@ class UserApi extends AbstractApi {
 
   public getUserProfile(): AxiosPromise<IUserProfileResponse> {
     return this.http.get('user');
+  }
+
+  public updateUserProfile(profileData: IUserProfileUpdateRequest): AxiosPromise<IGeneralResponse> {
+    return this.http.put('user', profileData);
   }
 }
 
