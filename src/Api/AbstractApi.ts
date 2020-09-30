@@ -21,6 +21,7 @@ abstract class AbstractApi {
   private readonly ENDPOINT_DEV: string = 'http://13.251.129.57:8080';
   private readonly ENDPOINT_STAGING: string = 'https://cors-anywhere.herokuapp.com/http://13.251.129.57:8080';
   private readonly ENDPOINT_LIVE: string = 'https://cors-anywhere.herokuapp.com/http://13.251.129.57:8080';
+  private readonly MOCK_LOCAL: string = 'http://localhost:3000';
 
   // --------------------------------------------------------------------------------------------
   // Magic methods
@@ -42,11 +43,14 @@ abstract class AbstractApi {
       case Environment.PRODUCTION:
         baseUrl = this.ENDPOINT_LIVE;
         break;
+      case Environment.MOCK_LOCAL:
+        baseUrl = this.MOCK_LOCAL;
+        break;
       default:
         throw new Error(`Invalid env "${env}" value`);
     }
 
-    let headers: {locale: string; token?: string} = {
+    let headers: { locale: string; token?: string } = {
       locale: 'en'
     };
 
