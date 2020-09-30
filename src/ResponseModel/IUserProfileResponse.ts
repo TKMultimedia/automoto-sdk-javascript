@@ -1,3 +1,5 @@
+import IAddress from '../Model/IAddress';
+
 export default interface IUserProfileResponse {
   id: string;
   email: string;
@@ -24,7 +26,7 @@ export default interface IUserProfileResponse {
   updated_at: string;
   fee_vehicle_id: number;
   fee_garage_id: number;
-  addresses: any[];
+  addresses: IAddress[];
   createdAt: number;
   updatedAt: number;
   image?: {
