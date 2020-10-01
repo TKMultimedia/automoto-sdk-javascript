@@ -1,3 +1,5 @@
+import IVehicle from './IVehicle';
+
 export default interface IEmployee {
   id?: string;
   gender: string;
@@ -10,6 +12,7 @@ export default interface IEmployee {
   email: string;
   password: string;
   is_contact_person?: number;
+  is_reponsible?: number;
   company_name: string;
   driving_license: string;
   is_same_company_address: number;
@@ -17,4 +20,9 @@ export default interface IEmployee {
   company_zipcode?: number;
   company_city?: string;
   company_country?: string;
+  user_id: string;
+  created_at: string;
+  updated_at: string;
+  deletedAt: string;
+  vehicles: IVehicle;
 }
