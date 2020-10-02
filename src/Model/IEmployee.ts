@@ -17,7 +17,7 @@ export default interface IEmployee {
   driving_license: string;
   is_same_company_address: number;
   company_address?: string;
-  company_zipcode?: number;
+  company_zipcode?: string;
   company_city?: string;
   company_country?: string;
   user_id: string;
