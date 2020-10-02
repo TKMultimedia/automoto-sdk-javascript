@@ -52,6 +52,10 @@ class EmployeeApi extends AbstractApi {
       vehicle_id: vehicleId
     });
   }
+
+  public deleteEmployee(employeeId: number): AxiosPromise<IGeneralResponse> {
+    return this.http.delete(`company/employee/${employeeId}`);
+  }
 }
 
 export default EmployeeApi;
