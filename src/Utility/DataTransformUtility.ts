@@ -1,6 +1,7 @@
 import * as camelCaseKeys from 'camelcase-keys';
 import * as snakeCaseKeys from 'snakecase-keys';
 import { forEach } from 'lodash';
+import { AxiosResponse } from 'axios';
 
 enum CONVERT_MODE {
   STRING_TO_DATE,
@@ -63,6 +64,16 @@ function convertDate(data: {}, mode: CONVERT_MODE): {} {
 
   return data;
 }
+
+type wrapperType = <DataType>(data: DataType) => AxiosResponse<DataType>;
+
+export const wrapAxiosResponse: wrapperType = <DataType>(data: DataType): AxiosResponse<DataType> => ({
+  data,
+  status: 200,
+  statusText: 'Done',
+  headers: {},
+  config: {}
+});
 
 export {
   transformRequest,

@@ -1,3 +1,5 @@
+import IUploadImage from './IUploadImage';
+
 export default interface IVehicle {
   id?: number;
   license_plate: string;
@@ -23,4 +25,5 @@ export default interface IVehicle {
   is_new: number;
   last_vehicle_inspection: string;
   category_vehicle_id: number;
+  image?: IUploadImage;
 }
