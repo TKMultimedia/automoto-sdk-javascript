@@ -1,3 +1,6 @@
+import IAddress from '../Model/IAddress';
 import IUserProfileResponse from '../ResponseModel/IUserProfileResponse';
 
-export type IUserProfileUpdateRequest = IUserProfileResponse;
+export interface IUserProfileUpdateRequest extends IUserProfileResponse {
+  address?: IAddress;
+};

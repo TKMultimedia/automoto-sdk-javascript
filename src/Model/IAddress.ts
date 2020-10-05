@@ -6,10 +6,10 @@ export default interface IAddress {
   country: string;
   lat: number;
   lon: number;
-  created_at: string;
-  updated_at: string;
-  deletedAt: string;
-  user_id: string;
-  customer_garage_id: number;
-  employee_company_id: string;
+  created_at?: string;
+  updated_at?: string;
+  deletedAt?: string;
+  user_id?: string;
+  customer_garage_id?: number;
+  employee_company_id?: string;
 }
