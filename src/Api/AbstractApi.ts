@@ -22,6 +22,7 @@ abstract class AbstractApi {
   private readonly ENDPOINT_STAGING: string = 'https://cors-anywhere.herokuapp.com/http://13.251.129.57:8080';
   private readonly ENDPOINT_LIVE: string = 'https://cors-anywhere.herokuapp.com/http://13.251.129.57:8080';
   private readonly MOCK_LOCAL: string = 'http://localhost:3000';
+  private readonly MOCK_ONLINE: string = 'https://automoto-mocking.herokuapp.com';
 
   // --------------------------------------------------------------------------------------------
   // Magic methods
@@ -45,6 +46,9 @@ abstract class AbstractApi {
         break;
       case Environment.MOCK_LOCAL:
         baseUrl = this.MOCK_LOCAL;
+        break;
+      case Environment.MOCK_ONLINE:
+        baseUrl = this.MOCK_ONLINE;
         break;
       default:
         throw new Error(`Invalid env "${env}" value`);
