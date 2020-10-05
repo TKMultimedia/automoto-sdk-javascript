@@ -1,4 +1,4 @@
-import IAddress from './IAddress';
+import { ICustomerGarage } from './ICustomerGarage';
 
 export default interface IAppointment {
   id?: number;
@@ -6,23 +6,6 @@ export default interface IAppointment {
   time_schedule: string;
   garage_id: number;
   description: string;
-  customer_garage: {
-    gender: string;
-    category_vehicle_id: number;
-    garage_id: number;
-    vehicle_id: number;
-    user_id: number;
-    name: string;
-    first_name: string;
-    email: string;
-    phone: string;
-    license_plate: string;
-    serial_number: string;
-    model: string;
-    brand: string;
-    type_customer: number;
-    company_name: string;
-    address: IAddress;
-  };
+  customer_garage: ICustomerGarage;
   service_garage_id: number;
 }
