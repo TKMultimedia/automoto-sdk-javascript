@@ -13,8 +13,8 @@ export default interface IUserProfileResponse {
   is_company: number;
   is_lock: number;
   is_delete: number;
-  rcs_number: number;
-  vat_number: number;
+  rcs_number: string;
+  vat_number: string;
   number_max_vehicle: number;
   number_max_appointment: number;
   role: number;
