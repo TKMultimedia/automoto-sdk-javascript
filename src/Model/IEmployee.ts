@@ -7,8 +7,8 @@ export default interface IEmployee {
   last_name: string;
   department: string;
   job_title: string;
-  direct_phone: number;
-  phone: number;
+  direct_phone: string;
+  phone: string;
   email: string;
   password: string;
   is_contact_person?: number;
