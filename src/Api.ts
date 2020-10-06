@@ -4,6 +4,7 @@ import UserApi from './Api/UserApi';
 import EmployeeApi from './Api/EmployeeApi';
 import ManageApi from './Api/ManageApi';
 import InvoiceApi from './Api/InvoiceApi';
+import CardApi from './Api/CardApi';
 import Environment from './Enum/Environment';
 
 export {
@@ -13,5 +14,6 @@ export {
   EmployeeApi as EmployeeApi,
   ManageApi as Manage,
   InvoiceApi as Invoice,
+  CardApi as Card,
   Environment
 };
