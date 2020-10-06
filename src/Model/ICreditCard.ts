@@ -3,6 +3,6 @@ export default interface ICreditCard {
   card_name: string;
   card_number: string;
   expiration_date: string;
-  cvc: number;
+  cvc: string;
   user_id?: number;
 }
