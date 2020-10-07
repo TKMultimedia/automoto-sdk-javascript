@@ -6,6 +6,7 @@ import { wrapAxiosResponse } from '../Utility/DataTransformUtility';
 import IVehicle from '../Model/IVehicle';
 import IVehicleListResponse from '../ResponseModel/IVehicleListResponse';
 import IGeneralRequestParams from '../RequestModel/IGeneralRequestParams';
+import IAddVehicleResponse from '../ResponseModel/IAddVehicleResponse';
 
 /**
  * @since v1.0.0
@@ -63,6 +64,10 @@ class VehicleApi extends AbstractApi {
     }
 
     return this.http.get('vehicle', { params });
+  }
+
+  public addVehicle(vehicle: IVehicle): AxiosPromise<IAddVehicleResponse> {
+    return this.http.post('vehicle', vehicle);
   }
 }
 
