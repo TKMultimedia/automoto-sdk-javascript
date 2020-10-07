@@ -4,6 +4,8 @@ import ISearchGarageRequest from '../RequestModel/ISearchGarageRequest';
 import IGarageResponse from '../ResponseModel/IGarageResponse';
 import { wrapAxiosResponse } from '../Utility/DataTransformUtility';
 import IVehicle from '../Model/IVehicle';
+import IVehicleListResponse from '../ResponseModel/IVehicleListResponse';
+import IGeneralRequestParams from '../RequestModel/IGeneralRequestParams';
 
 /**
  * @since v1.0.0
@@ -45,6 +47,22 @@ class VehicleApi extends AbstractApi {
       last_vehicle_inspection: 'Manual',
       category_vehicle_id: 1
     }));
+  }
+
+  public getVehicles(page: number, limit: number, textSearch?: string): AxiosPromise<IVehicleListResponse> {
+    let params: IGeneralRequestParams = {
+      limit,
+      page
+    };
+
+    if (typeof textSearch !== 'undefined') {
+      params = {
+        ...params,
+        text_search: textSearch
+      };
+    }
+
+    return this.http.get('vehicle', { params });
   }
 }
 
