@@ -1,5 +1,5 @@
 export default interface IGarage {
-  id: number;
+  id?: number;
   garage_name: string;
   address: string;
   city: string;

@@ -3,7 +3,7 @@ import IGarage from './IGarage';
 import IInvoiceService from './IInvoiceService';
 
 export default interface IInvoice {
-  id: number;
+  id?: number;
   garage_id: number;
   appointment_id: number;
   user_id: number;

@@ -1,7 +1,7 @@
 import IAddress from './IAddress';
 
 export interface ICustomerGarage {
-  id: number;
+  id?: number;
   gender: string;
   category_vehicle_id: number;
   garage_id: number;
