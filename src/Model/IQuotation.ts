@@ -3,7 +3,7 @@ import IGarage from './IGarage';
 import IQuotationService from './IQuotationService';
 
 export default interface IQuotation {
-  id: number;
+  id?: number;
   garage_id: number;
   appointment_id: number;
   user_id: number;
