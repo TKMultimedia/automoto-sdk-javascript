@@ -1,4 +1,4 @@
-import IQuotation from "../Model/IQuotation";
+import IQuotation from '../Model/IQuotation';
 
 export default interface IQuotationResponse {
   count: number;

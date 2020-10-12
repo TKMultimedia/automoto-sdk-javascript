@@ -3,6 +3,7 @@ import { AxiosPromise } from 'axios';
 import IGarageTypeResponse from '../ResponseModel/IGarageTypeResponse';
 import IVehicleCategoryResponse from '../ResponseModel/IVehicleCategoryResponse';
 import IServiceListResponse from '../ResponseModel/IServiceListResponse';
+import IPlan from '../Model/IPlan';
 
 /**
  * @since v1.0.0
@@ -29,6 +30,10 @@ class ManageApi extends AbstractApi {
         limit
       }
     });
+  }
+
+  public getPlanPacks(): AxiosPromise<IPlan[]> {
+    return this.http.get('fee-vehicle');
   }
 }
 
