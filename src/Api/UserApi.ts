@@ -23,8 +23,8 @@ class UserApi extends AbstractApi {
     return this.http.put('user', profileData);
   }
 
-  public carOwnerPaidService(planId: number, card: ICreditCard): AxiosPromise<IGeneralResponse> {
-    return this.http.post('user/car-owner/paid-services', { fee_vehicle_id: planId, card });
+  public carOwnerPaidService(planId: number, card?: ICreditCard): AxiosPromise<IGeneralResponse> {
+    return this.http.post('user/car-owner/paid-services', { fee_vehicle_id: planId, ...card && card });
   }
 }
 
