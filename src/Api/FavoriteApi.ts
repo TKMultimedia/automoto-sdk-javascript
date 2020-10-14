@@ -1,6 +1,5 @@
 import AbstractApi from './AbstractApi';
 import { AxiosPromise } from 'axios';
-import IGarageResponse from '../ResponseModel/IGarageResponse';
 import { IGeneralResponse } from '../ResponseModel/IErrorResponse';
 import ISearchGarageResponse from '../ResponseModel/ISearchGarageResponse';
 
