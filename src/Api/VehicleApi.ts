@@ -8,6 +8,7 @@ import IVehicleListResponse from '../ResponseModel/IVehicleListResponse';
 import IGeneralRequestParams from '../RequestModel/IGeneralRequestParams';
 import IAddVehicleResponse from '../ResponseModel/IAddVehicleResponse';
 import { IGeneralResponse } from '../ResponseModel/IErrorResponse';
+import ISearchGarageResponse from '../ResponseModel/ISearchGarageResponse';
 
 /**
  * @since v1.0.0
@@ -18,7 +19,7 @@ class VehicleApi extends AbstractApi {
   // Public methods
   // --------------------------------------------------------------------------------------------
 
-  public searchGarage(searchGarageRequest: ISearchGarageRequest): AxiosPromise<IGarageResponse[]> {
+  public searchGarage(searchGarageRequest: ISearchGarageRequest): AxiosPromise<ISearchGarageResponse> {
     return this.http.get('vehicle/search-garage', { params: searchGarageRequest });
   }
 
