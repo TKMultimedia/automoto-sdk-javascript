@@ -1,7 +1,6 @@
 import AbstractApi from './AbstractApi';
 import { AxiosPromise } from 'axios';
 import ISearchGarageRequest from '../RequestModel/ISearchGarageRequest';
-import IGarageResponse from '../ResponseModel/IGarageResponse';
 import { wrapAxiosResponse } from '../Utility/DataTransformUtility';
 import IVehicle from '../Model/IVehicle';
 import IVehicleListResponse from '../ResponseModel/IVehicleListResponse';
