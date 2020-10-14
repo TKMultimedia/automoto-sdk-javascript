@@ -4,4 +4,7 @@ export default interface ISearchGarageRequest {
   address: string;
   lat: number;
   lon: number;
+  page: number;
+  limit: number;
+  filter_type?: number;
 }
