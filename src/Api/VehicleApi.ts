@@ -7,6 +7,7 @@ import IVehicle from '../Model/IVehicle';
 import IVehicleListResponse from '../ResponseModel/IVehicleListResponse';
 import IGeneralRequestParams from '../RequestModel/IGeneralRequestParams';
 import IAddVehicleResponse from '../ResponseModel/IAddVehicleResponse';
+import { IGeneralResponse } from '../ResponseModel/IErrorResponse';
 
 /**
  * @since v1.0.0
@@ -68,6 +69,10 @@ class VehicleApi extends AbstractApi {
 
   public addVehicle(vehicle: IVehicle): AxiosPromise<IAddVehicleResponse> {
     return this.http.post('vehicle', vehicle);
+  }
+
+  public deleteVehicle(id: number): AxiosPromise<IGeneralResponse> {
+    return this.http.delete(`vehicle/${id}`);
   }
 }
 
