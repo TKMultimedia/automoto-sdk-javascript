@@ -1,3 +1,5 @@
+import SearchGarageFilterType from '../Enum/SearchGarageFilterType';
+
 export default interface ISearchGarageRequest {
   license_plate: string;
   name_service: string;
@@ -6,5 +8,5 @@ export default interface ISearchGarageRequest {
   lon: number;
   page: number;
   limit: number;
-  filter_type?: number;
+  filter_type?: SearchGarageFilterType;
 }

@@ -4,6 +4,7 @@ import IUserProfileResponse from '../ResponseModel/IUserProfileResponse';
 import { IUserProfileUpdateRequest } from '../RequestModel/IUserProfileUpdateRequest';
 import { IGeneralResponse } from '../ResponseModel/IErrorResponse';
 import ICreditCard from '../Model/ICreditCard';
+import IPaidServiceRequestParams from '../RequestModel/IPaidServiceRequestParam';
 
 /**
  * @since v1.0.0
@@ -24,7 +25,18 @@ class UserApi extends AbstractApi {
   }
 
   public carOwnerPaidService(planId: number, card?: ICreditCard): AxiosPromise<IGeneralResponse> {
-    return this.http.post('user/car-owner/paid-services', { fee_vehicle_id: planId, ...card && card });
+    let requestParams: IPaidServiceRequestParams = {
+      fee_vehicle_id: planId
+    };
+
+    if (typeof card !== 'undefined') {
+      requestParams = {
+        ...requestParams,
+        card
+      };
+    }
+
+    return this.http.post('user/car-owner/paid-services', requestParams);
   }
 }
 
