@@ -1,3 +1,7 @@
+import IGarageImage from './IGarageImage';
+import IGarageUser from './IGarageUser';
+import IGarageWorkingTime from './IGarageWorkingTime';
+
 export default interface IGarage {
   id?: number;
   garage_name: string;
@@ -25,9 +29,9 @@ export default interface IGarage {
   quantity_invoice: number;
   distance: number;
   createdAt: number;
-  user: {
-    phone: string;
-  };
+  user: IGarageUser;
   workshop_number: string;
   zip_code: number;
+  image_garages: IGarageImage[];
+  work_time_garages: IGarageWorkingTime[];
 }
