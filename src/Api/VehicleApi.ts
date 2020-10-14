@@ -19,7 +19,7 @@ class VehicleApi extends AbstractApi {
   // --------------------------------------------------------------------------------------------
 
   public searchGarage(searchGarageRequest: ISearchGarageRequest): AxiosPromise<IGarageResponse[]> {
-    return this.http.post('vehicle/search-garage', searchGarageRequest);
+    return this.http.get('vehicle/search-garage', { params: searchGarageRequest });
   }
 
   public getVehicleInfoByPlateNumber(plateNumber: string): AxiosPromise<IVehicle> {
