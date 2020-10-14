@@ -2,6 +2,7 @@ import AbstractApi from './AbstractApi';
 import { AxiosPromise } from 'axios';
 import IGarageResponse from '../ResponseModel/IGarageResponse';
 import { IGeneralResponse } from '../ResponseModel/IErrorResponse';
+import ISearchGarageResponse from '../ResponseModel/ISearchGarageResponse';
 
 /**
  * @since v1.0.0
@@ -14,7 +15,7 @@ class FavoriteApi extends AbstractApi {
   // Public methods
   // --------------------------------------------------------------------------------------------
 
-  public getFavoriteGarages(page: number, limit: number): AxiosPromise<IGarageResponse[]> {
+  public getFavoriteGarages(page: number, limit: number): AxiosPromise<ISearchGarageResponse> {
     return this.http.get(this.CAROWNERFAVORITE_ENDPOINT, {
       params: {
         page,
