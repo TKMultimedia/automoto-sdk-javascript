@@ -1,12 +1,12 @@
 import AbstractApi from './AbstractApi';
 import { AxiosPromise } from 'axios';
-import IGarageTypeResponse from '../ResponseModel/IGarageTypeResponse';
 import IVehicleCategoryResponse from '../ResponseModel/IVehicleCategoryResponse';
 import IServiceListResponse from '../ResponseModel/IServiceListResponse';
 import IPlan from '../Model/IPlan';
 import IPaymentMethod from '../Model/IPaymentMethod';
 import ILicensedInsurance from '../Model/ILicensedInsurance';
 import IInsuranceAccepted from '../Model/IInsuranceAccepted';
+import IGarageType from '../Model/IGarageType';
 
 /**
  * @since v1.0.0
@@ -18,7 +18,7 @@ class ManageApi extends AbstractApi {
   // Public methods
   // --------------------------------------------------------------------------------------------
 
-  public getGarageType(): AxiosPromise<IGarageTypeResponse[]> {
+  public getGarageType(): AxiosPromise<IGarageType[]> {
     return this.http.get('type-garage');
   }
 
