@@ -15,10 +15,19 @@ export default interface IGarage {
   holiday_start: number;
   holiday_end: number;
   description: string;
-  user_id: number;
-  type_garage: number[];
   category_vehicle: number[];
   insurance_accepted: number[];
   licensed_insurance: number[];
-  payment_method: number[];
+  payment_methods: string[];
+  type_garages: string[];
+  is_fav: boolean;
+  is_working: boolean;
+  quantity_invoice: number;
+  distance: number;
+  createdAt: number;
+  user: {
+    phone: string;
+  };
+  workshop_number: string;
+  zip_code: number;
 }
