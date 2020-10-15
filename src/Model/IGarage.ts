@@ -22,7 +22,7 @@ export default interface IGarage {
   category_vehicle: number[];
   insurance_accepted: number[];
   licensed_insurance: number[];
-  payment_methods: string[];
+  payment_methods: number[];
   type_garages: string[];
   is_fav: boolean;
   is_working: boolean;
