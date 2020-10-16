@@ -74,6 +74,11 @@ class VehicleApi extends AbstractApi {
   public deleteVehicle(id: number): AxiosPromise<IGeneralResponse> {
     return this.http.delete(`vehicle/${id}`);
   }
+
+  public updateVehicle(vehicle: IVehicle): AxiosPromise<IGeneralResponse> {
+    return this.http.put('vehicle', vehicle);
+  }
+
 }
 
 export default VehicleApi;
