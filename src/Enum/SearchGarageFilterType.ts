@@ -1,7 +1,8 @@
 enum SearchGarageFilterType {
-  FAVORITE = 1, // default
-  NEAREST = 2,
-  REPRESENTATION = 3
+  FAVORITE = 1,
+  NEAREST = 2, // default
+  REPRESENTATION = 3,
+  MANUFACTURER = 4
 }
 
 export default SearchGarageFilterType;
