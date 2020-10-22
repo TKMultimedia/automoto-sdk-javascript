@@ -55,6 +55,10 @@ class ManageApi extends AbstractApi {
   public getInsurancesAccepted(): AxiosPromise<IInsuranceAccepted[]> {
     return this.http.get('insurance-accepted');
   }
+
+  public getServicesByGarageId(garageId: number): AxiosPromise<IService[]> {
+    return this.http.get(`service-master/${garageId}`);
+  }
 }
 
 export default ManageApi;
