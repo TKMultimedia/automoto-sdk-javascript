@@ -7,6 +7,7 @@ import IPaymentMethod from '../Model/IPaymentMethod';
 import ILicensedInsurance from '../Model/ILicensedInsurance';
 import IInsuranceAccepted from '../Model/IInsuranceAccepted';
 import IGarageType from '../Model/IGarageType';
+import IService from '../Model/IService';
 
 /**
  * @since v1.0.0
@@ -33,6 +34,10 @@ class ManageApi extends AbstractApi {
         limit
       }
     });
+  }
+
+  public getServiceCategories(): AxiosPromise<IService[]> {
+    return this.http.get('service-master/category');
   }
 
   public getPlanPacks(): AxiosPromise<IPlan[]> {

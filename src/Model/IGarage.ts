@@ -40,5 +40,5 @@ export default interface IGarage {
   zip_code: number;
   image_garages: IGarageImage[];
   work_time_garages: IGarageWorkingTime[];
-  service_garages: IGeneralMappingData[]
+  service_garages: IGeneralMappingData[];
 }
