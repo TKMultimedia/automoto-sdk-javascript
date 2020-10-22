@@ -9,4 +9,5 @@ export default interface IService {
   garage_id?: number;
   is_admin_created: number;
   parent_id: number;
+  children?: IService[];
 }
