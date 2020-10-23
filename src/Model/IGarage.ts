@@ -45,4 +45,5 @@ export default interface IGarage {
   accepted_insurances: IGeneralMappingData[];
   licensed_insurances: IGeneralMappingData[];
   brand_subsidiaries: IGeneralMappingData[];
+  brand_representations: IGeneralMappingData[];
 }
