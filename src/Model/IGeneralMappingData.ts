@@ -1,4 +1,4 @@
 export default interface IGeneralMappingData {
-  id?: number;
+  id: number;
   name: string;
 }

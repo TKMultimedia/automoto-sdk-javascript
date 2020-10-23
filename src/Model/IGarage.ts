@@ -41,4 +41,8 @@ export default interface IGarage {
   image_garages: IGarageImage[];
   work_time_garages: IGarageWorkingTime[];
   service_garages: IGeneralMappingData[];
+  services: IGeneralMappingData[];
+  accepted_insurances: IGeneralMappingData[];
+  licensed_insurances: IGeneralMappingData[];
+  brand_subsidiaries: IGeneralMappingData[];
 }
