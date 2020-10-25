@@ -25,6 +25,19 @@ class InvoiceApi extends AbstractApi {
   public getInvoiceById(invoiceId: string): AxiosPromise<IInvoice> {
     return this.http.get(`car-owner/invoice/${invoiceId}`);
   }
+
+  public getInvoicesByPlateNumber(
+    page: number,
+    limit: number,
+    plateNumber: string): AxiosPromise<IInvoiceListResponse> {
+    return this.http.get('car-owner/invoice/plate-number', {
+      params: {
+        page,
+        limit,
+        license_plate: plateNumber
+      }
+    });
+  }
 }
 
 export default InvoiceApi;
