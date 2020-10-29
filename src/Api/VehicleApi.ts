@@ -21,8 +21,8 @@ class VehicleApi extends AbstractApi {
     return this.http.get('vehicle/search-garage', { params: searchGarageRequest });
   }
 
-  public getVehicleInfoByPlateNumber(lisense_plate: string): AxiosPromise<IVehicle> {
-    return this.http.get('vehicle/lisense-plate', { params: {lisense_plate} });
+  public getVehicleInfoByPlateNumber(lisensePlate: string): AxiosPromise<IVehicle> {
+    return this.http.get('vehicle/lisense-plate', { params: { lisense_plate: lisensePlate } });
   }
 
   public getVehicles(page: number, limit: number, textSearch?: string): AxiosPromise<IVehicleListResponse> {
