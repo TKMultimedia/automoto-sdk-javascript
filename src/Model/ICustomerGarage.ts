@@ -1,4 +1,5 @@
 import IAddress from './IAddress';
+import IVehicle from './IVehicle';
 
 export interface ICustomerGarage {
   id?: number;
@@ -18,4 +19,5 @@ export interface ICustomerGarage {
   type_customer: number;
   company_name: string;
   address: IAddress;
+  vehicle: IVehicle;
 }
