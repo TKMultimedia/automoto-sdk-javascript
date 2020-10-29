@@ -22,7 +22,7 @@ class VehicleApi extends AbstractApi {
   }
 
   public getVehicleInfoByPlateNumber(lisensePlate: string): AxiosPromise<IVehicle> {
-    return this.http.get('vehicle/lisense-plate', { params: { lisense_plate: lisensePlate } });
+    return this.http.get('vehicle-lisense-plate', { params: { lisense_plate: lisensePlate } });
   }
 
   public getVehicles(page: number, limit: number, textSearch?: string): AxiosPromise<IVehicleListResponse> {
