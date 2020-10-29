@@ -1,7 +1,6 @@
 import AbstractApi from './AbstractApi';
 import { AxiosPromise } from 'axios';
 import ISearchGarageRequest from '../RequestModel/ISearchGarageRequest';
-import { wrapAxiosResponse } from '../Utility/DataTransformUtility';
 import IVehicle from '../Model/IVehicle';
 import IVehicleListResponse from '../ResponseModel/IVehicleListResponse';
 import IGeneralRequestParams from '../RequestModel/IGeneralRequestParams';
@@ -22,33 +21,8 @@ class VehicleApi extends AbstractApi {
     return this.http.get('vehicle/search-garage', { params: searchGarageRequest });
   }
 
-  public getVehicleInfoByPlateNumber(plateNumber: string): AxiosPromise<IVehicle> {
-    // Temporary return mock vehicle data
-    return Promise.resolve(wrapAxiosResponse<IVehicle>({
-      license_plate: plateNumber,
-      image_vehicle: '',
-      brand: 'BMW',
-      model: '5666',
-      version: '2.0MT',
-      type_vehicle: 'SUV',
-      power: '110 CV',
-      fuel: 'diezel',
-      gearbox: 'Manual',
-      number_door: '05',
-      serial_number: '123456789',
-      manufacture_year: 2015,
-      environment_pelle: 1,
-      assurance_assistance: '',
-      contact_assistance: '',
-      contract_number_assistance: '',
-      phone_assistance: '',
-      brand_assistance: '',
-      brand_contract: '',
-      brand_phone: '',
-      is_new: 1,
-      last_vehicle_inspection: 'Manual',
-      category_vehicle_id: 1
-    }));
+  public getVehicleInfoByPlateNumber(lisense_plate: string): AxiosPromise<IVehicle> {
+    return this.http.get('vehicle/lisense-plate', { params: {lisense_plate} });
   }
 
   public getVehicles(page: number, limit: number, textSearch?: string): AxiosPromise<IVehicleListResponse> {
