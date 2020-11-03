@@ -21,6 +21,10 @@ class AppointmentApi extends AbstractApi {
   public getListAppointment(page: number, limit: number): AxiosPromise<IAppointmentListResponse> {
     return this.http.get('appointment', { params: { page, limit } });
   }
+
+  public cancelAppointment(appointmentId: number): AxiosPromise<IGeneralResponse> {
+    return this.http.put(`appointment/cancel/${appointmentId}`);
+  }
 }
 
 export default AppointmentApi;
