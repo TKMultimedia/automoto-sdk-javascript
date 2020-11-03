@@ -13,8 +13,8 @@ class QuotationApi extends AbstractApi {
   // --------------------------------------------------------------------------------------------
 
   public getQuotationByVehiclePlateNumber(
-    limit: number,
     page: number,
+    limit: number,
     plateNumber: string): AxiosPromise<IQuotationResponse> {
     return this.http.get(
       'car-owner/quotation',
