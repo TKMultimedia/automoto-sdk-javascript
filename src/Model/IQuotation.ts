@@ -8,13 +8,19 @@ export default interface IQuotation {
   id?: number;
   garage_id: number;
   appointment_id: number;
-  user_id: number;
-  discount: string;
+  user_id: string;
+  discount: number;
   comments: string;
   content_refuse: string;
   status: QuotationStatus;
   garage: IGarage;
   customer_garage: ICustomerGarage;
-  quotation_services: IQuotationService;
+  customer_garage_id: number;
+  quotation_services: IQuotationService[];
   appointment: IAppointment;
+  employee_company_id: number;
+  staff_garage: string;
+  staff_garage_id: number;
+  tax: number;
+  total: number;
 }
