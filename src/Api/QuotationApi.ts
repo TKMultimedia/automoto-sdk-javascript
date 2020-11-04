@@ -58,7 +58,7 @@ class QuotationApi extends AbstractApi {
       };
     }
 
-    return this.http.put('car-owner/quotation', { id: quotationId, status, });
+    return this.http.put('car-owner/quotation', requestBody);
   }
 }
 
