@@ -1,7 +1,10 @@
 import AbstractApi from './AbstractApi';
 import { AxiosPromise } from 'axios';
+import { isEmpty as _isEmpty } from 'lodash';
 import IQuotationResponse from '../ResponseModel/IQuotationResponse';
 import QuotationStatus from '../Enum/QuotationStatus';
+import { IGeneralResponse } from '../ResponseModel/IErrorResponse';
+import IQuotationUpdateRequest from '../RequestModel/IQuotationUpdateRequest';
 
 /**
  * @since v1.0.0
@@ -28,6 +31,34 @@ class QuotationApi extends AbstractApi {
           status
         }
       });
+  }
+
+  public updateQuotation(
+    quotationId: number,
+    status: QuotationStatus,
+    comments?: string,
+    refusedComment?: string
+  ): AxiosPromise<IGeneralResponse> {
+    let requestBody: IQuotationUpdateRequest = {
+      id: quotationId,
+      status
+    };
+
+    if (_isEmpty(comments) === false) {
+      requestBody = {
+        ...requestBody,
+        comments
+      };
+    }
+
+    if (_isEmpty(refusedComment) === false) {
+      requestBody = {
+        ...requestBody,
+        content_refuse: refusedComment
+      };
+    }
+
+    return this.http.put('car-owner/quotation', { id: quotationId, status, });
   }
 }
 
