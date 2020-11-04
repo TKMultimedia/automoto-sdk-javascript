@@ -1,6 +1,7 @@
 import AbstractApi from './AbstractApi';
 import { AxiosPromise } from 'axios';
 import IQuotationResponse from '../ResponseModel/IQuotationResponse';
+import QuotationStatus from '../Enum/QuotationStatus';
 
 /**
  * @since v1.0.0
@@ -15,14 +16,16 @@ class QuotationApi extends AbstractApi {
   public getQuotationByVehiclePlateNumber(
     page: number,
     limit: number,
-    plateNumber: string): AxiosPromise<IQuotationResponse> {
+    plateNumber: string,
+    status: QuotationStatus): AxiosPromise<IQuotationResponse> {
     return this.http.get(
       'car-owner/quotation',
       {
         params: {
           page,
           limit,
-          license_plate: plateNumber
+          license_plate: plateNumber,
+          status
         }
       });
   }
