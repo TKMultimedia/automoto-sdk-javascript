@@ -11,7 +11,7 @@ export default interface IInvoice {
   image: string | IUploadImage;
   date_invoice: number;
   user_id: number;
-  m_service_garages: string;
+  m_service_garages: number[];
   service_name: string[];
   discount: number;
   tax: number;
