@@ -1,5 +1,9 @@
+import IServiceGarage from './IServiceGarage';
+
 export default interface IInvoiceService {
-  service_garage_id: number;
+  id: number;
   quantity: number;
   price: number;
+  service_garage: IServiceGarage;
+  total: number;
 }
