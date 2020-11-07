@@ -20,5 +20,5 @@ export default interface IInvoice {
   status: number;
   garage: IGarage;
   customer_garage: ICustomerGarage;
-  invoice_services: IInvoiceService;
+  invoice_services: IInvoiceService[];
 }
