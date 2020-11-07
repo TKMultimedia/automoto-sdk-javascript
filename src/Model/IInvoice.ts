@@ -8,11 +8,13 @@ export default interface IInvoice {
   appointment_id: number;
   title: string;
   image: string;
-  date_invoice: string;
+  date_invoice: number;
   user_id: number;
   m_service_garages: string;
   service_name: string[];
-  discount: string;
+  discount: number;
+  tax: number;
+  total: number;
   comments: string;
   content_refuse: string;
   status: number;
