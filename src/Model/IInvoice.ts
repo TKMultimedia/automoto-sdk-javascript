@@ -22,4 +22,5 @@ export default interface IInvoice {
   garage: IGarage;
   customer_garage: ICustomerGarage;
   invoice_services: IInvoiceService[];
+  license_plate?: string;
 }
