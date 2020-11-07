@@ -12,6 +12,7 @@ export default interface IInvoice {
   date_invoice: number;
   user_id: number;
   m_service_garages: number[];
+  m_service_ids: number[];
   service_name: string[];
   discount: number;
   tax: number;
