@@ -26,7 +26,7 @@ class VehicleApi extends AbstractApi {
   }
 
   public getVehicleInfoByVehicleId(id: number): AxiosPromise<IVehicle> {
-    return this.http.get('vehicle', { params: { id } });
+    return this.http.get(`vehicle/${id}`);
   }
 
   public getVehicles(page: number, limit: number, textSearch?: string): AxiosPromise<IVehicleListResponse> {
