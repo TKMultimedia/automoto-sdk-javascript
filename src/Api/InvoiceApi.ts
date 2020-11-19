@@ -41,6 +41,12 @@ class InvoiceApi extends AbstractApi {
       }
     });
   }
+
+  public addRepairInvoiceByPlateNumber(
+    invoice: IInvoice,
+   ): AxiosPromise<IInvoiceListResponse> {
+    return this.http.post('car-owner/invoice', invoice);
+  }
 }
 
 export default InvoiceApi;
