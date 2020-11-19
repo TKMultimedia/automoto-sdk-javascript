@@ -3,4 +3,5 @@ export default interface IPlan {
   name: string;
   max_vehicle: string;
   fee_month: string;
+  is_for_company: number;
 }
