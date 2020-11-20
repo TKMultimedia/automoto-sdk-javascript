@@ -18,9 +18,9 @@ abstract class AbstractApi {
   // Private Properties
   // --------------------------------------------------------------------------------------------
 
-  private readonly ENDPOINT_DEV: string = 'http://13.251.129.57:8080';
-  private readonly ENDPOINT_STAGING: string = 'https://cors-anywhere.herokuapp.com/http://13.251.129.57:8080';
-  private readonly ENDPOINT_LIVE: string = 'https://cors-anywhere.herokuapp.com/http://13.251.129.57:8080';
+  private readonly ENDPOINT_DEV: string = 'https://api.oovoom.com';
+  private readonly ENDPOINT_STAGING: string = 'https://api.oovoom.com';
+  private readonly ENDPOINT_LIVE: string = 'https://api.oovoom.com';
   private readonly MOCK_LOCAL: string = 'http://localhost:3000';
   private readonly MOCK_ONLINE: string = 'https://automoto-mocking.herokuapp.com';
 
