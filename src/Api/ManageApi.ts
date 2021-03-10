@@ -28,7 +28,7 @@ class ManageApi extends AbstractApi {
   }
 
   public getServiceList(page: number, limit: number, category_vehicle_id?:number): AxiosPromise<IServiceListResponse> {
-    return this.http.get('service-master/children', {
+    return this.http.get('service-master', {
       params: {
         page,
         limit,
