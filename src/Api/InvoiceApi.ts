@@ -47,6 +47,12 @@ class InvoiceApi extends AbstractApi {
    ): AxiosPromise<IInvoiceListResponse> {
     return this.http.post('car-owner/invoice', invoice);
   }
+
+  public updateRepairInvoiceByPlateNumber(
+    invoice: IInvoice,
+   ): AxiosPromise<IInvoiceListResponse> {
+    return this.http.put('car-owner/invoice', invoice);
+  }
 }
 
 export default InvoiceApi;
