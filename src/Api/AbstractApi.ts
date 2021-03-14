@@ -2,6 +2,7 @@ import Axios, { AxiosInstance } from 'axios';
 import Environment from '../Enum/Environment';
 // import { transformRequest, transformResponse } from '../Utility/DataTransformUtility';
 
+
 abstract class AbstractApi {
 
   // --------------------------------------------------------------------------------------------
@@ -53,9 +54,18 @@ abstract class AbstractApi {
       default:
         throw new Error(`Invalid env "${env}" value`);
     }
-
+    let locale = 'fr';
+      if (window.localStorage) {
+        const data: any = window.localStorage.getItem('AUTOMOTO_CAROWNER_language');
+    
+        try {
+          locale = JSON.parse(data);
+        } catch {
+          locale= '';
+        }
+      }
     let headers: { locale: string; token?: string } = {
-      locale: 'en'
+      locale:  locale
     };
 
     if (typeof token !== 'undefined') {
