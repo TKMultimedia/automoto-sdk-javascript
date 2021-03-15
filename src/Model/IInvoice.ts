@@ -24,4 +24,6 @@ export default interface IInvoice {
   customer_garage: ICustomerGarage;
   invoice_services: IInvoiceService[];
   license_plate?: string;
+  createdAt: number;
+  is_invoice_image: number;
 }
