@@ -30,15 +30,18 @@ class InvoiceApi extends AbstractApi {
   public getInvoicesByPlateNumber(
     page: number,
     limit: number,
-    invoiceType: InvoiceType,
+    invoiceType: InvoiceType| undefined,
     plateNumber: string): AxiosPromise<IInvoiceListResponse> {
+    const queryParam : any = {
+      page,
+      limit,
+      license_plate: plateNumber
+    }
+    if(invoiceType) {
+      queryParam.type_invoice = invoiceType
+    }
     return this.http.get('car-owner/invoice/plate-number', {
-      params: {
-        page,
-        limit,
-        license_plate: plateNumber,
-        type_invoice: invoiceType
-      }
+      params: queryParam
     });
   }
 
