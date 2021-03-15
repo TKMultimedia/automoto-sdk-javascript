@@ -30,12 +30,14 @@ class InvoiceApi extends AbstractApi {
   public getInvoicesByPlateNumber(
     page: number,
     limit: number,
+    invoiceType: InvoiceType,
     plateNumber: string): AxiosPromise<IInvoiceListResponse> {
     return this.http.get('car-owner/invoice/plate-number', {
       params: {
         page,
         limit,
-        license_plate: plateNumber
+        license_plate: plateNumber,
+        type_invoice: invoiceType
       }
     });
   }
