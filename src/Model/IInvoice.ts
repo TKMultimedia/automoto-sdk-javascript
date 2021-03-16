@@ -1,8 +1,7 @@
 import { ICustomerGarage } from './ICustomerGarage';
 import IGarage from './IGarage';
-import IInvoiceService from './IInvoiceService';
+import IInvoiceService, { IInvoiceServiceName } from './IInvoiceService';
 import IUploadImage from './IUploadImage';
-
 export default interface IInvoice {
   id?: number;
   garage_id: number;
@@ -13,7 +12,7 @@ export default interface IInvoice {
   user_id: number;
   m_service_garages: number[];
   m_service_ids?: number[];
-  service_name: string[];
+  services_name: IInvoiceServiceName[];
   discount: number;
   tax: number;
   total: number;

@@ -7,3 +7,9 @@ export default interface IInvoiceService {
   service_garage: IServiceGarage;
   total: number;
 }
+export interface IInvoiceServiceName {
+  id: number;
+  name: string;
+  updatedAt?: number;
+  createdAt?: number;
+}
