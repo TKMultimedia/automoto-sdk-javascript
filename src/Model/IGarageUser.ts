@@ -3,4 +3,5 @@ export default interface IGarageUser {
   name: string;
   company_name: string;
   phone: string;
+  email: string;
 }

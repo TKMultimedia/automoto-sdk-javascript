@@ -3,6 +3,7 @@ import IGarage from './IGarage';
 import IInvoiceService, { IInvoiceServiceName } from './IInvoiceService';
 import IUploadImage from './IUploadImage';
 export default interface IInvoice {
+  code?: string; 
   id?: number;
   garage_id: number;
   appointment_id: number;
@@ -25,4 +26,6 @@ export default interface IInvoice {
   license_plate?: string;
   createdAt: number;
   is_invoice_image: number;
+  total_without_tax?: number;
+  total_tax?: number;
 }
