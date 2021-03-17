@@ -37,8 +37,10 @@ class QuotationApi extends AbstractApi {
     quotationId: number,
     status: QuotationStatus,
     comments?: string,
-    refusedComment?: string
+    refusedComment?: string,
+    rejectedComment?: string
   ): AxiosPromise<IGeneralResponse> {
+    let param = '';
     let requestBody: IQuotationUpdateRequest = {
       id: quotationId,
       status
@@ -57,8 +59,17 @@ class QuotationApi extends AbstractApi {
         content_refuse: refusedComment
       };
     }
-
-    return this.http.put('car-owner/quotation', requestBody);
+    if(_isEmpty(rejectedComment) === false) {
+      requestBody = {
+        quotation_id: quotationId,
+        content: rejectedComment
+      };
+      param = '/ask-for-update'
+    }
+    if(rejectedComment && param) {
+      return this.http.post(`car-owner/quotation${rejectedComment ? param : ''}`, requestBody);
+    }
+    return this.http.put(`car-owner/quotation`, requestBody);
   }
 }
 
