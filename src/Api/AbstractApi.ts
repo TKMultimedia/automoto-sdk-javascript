@@ -59,7 +59,11 @@ abstract class AbstractApi {
         const data: any = window.localStorage.getItem('AUTOMOTO_CAROWNER_language');
     
         try {
-          locale = JSON.parse(data);
+          if(data){
+            locale = JSON.parse(data);
+          }else {
+            locale = JSON.parse(window.localStorage.getItem('AUTOMOTO_CAROWNER_auth') as any).language;
+          }
         } catch {
           locale= '';
         }
