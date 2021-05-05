@@ -32,6 +32,7 @@ class UserApi extends AbstractApi {
     if (typeof card !== 'undefined') {
       requestParams = {
         ...requestParams,
+        card_id: card.id,
         card
       };
     }
