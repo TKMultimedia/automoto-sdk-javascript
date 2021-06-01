@@ -27,12 +27,13 @@ class ManageApi extends AbstractApi {
     return this.http.get('category-vehicle');
   }
 
-  public getServiceList(page: number, limit: number, category_vehicle_id?:number): AxiosPromise<IServiceListResponse> {
+  public getServiceList(page: number, limit: number, category_vehicle_id?:number,text_search?: string): AxiosPromise<IServiceListResponse> {
     return this.http.get('service-master', {
       params: {
         page,
         limit,
-        category_vehicle_id
+        category_vehicle_id,
+        text_search
       }
     });
   }
